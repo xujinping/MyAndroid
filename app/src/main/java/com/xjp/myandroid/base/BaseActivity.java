@@ -1,4 +1,4 @@
-package com.xjp.mymovieinfo.base;
+package com.xjp.myandroid.base;
 
 import android.app.ActionBar;
 import android.app.Activity;
@@ -9,10 +9,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-import com.xjp.mymovieinfo.activity.MainActivity;
-import com.xjp.mymovieinfo.application.MyApplication;
-import com.xjp.mymovieinfo.utils.MyLog;
-import com.xjp.mymovieinfo.widget.ViewInject;
+import com.xjp.myandroid.activity.MainActivity;
+import com.xjp.myandroid.application.MyApplication;
+import com.xjp.myandroid.utils.MyLog;
+import com.xjp.myandroid.widget.ViewInject;
 
 import java.lang.reflect.Field;
 

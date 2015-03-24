@@ -1,8 +1,8 @@
-package com.xjp.mymovieinfo.utils;
+package com.xjp.myandroid.utils;
 
 import android.util.Log;
 
-import com.xjp.mymovieinfo.BuildConfig;
+import com.xjp.myandroid.BuildConfig;
 
 /**
  * 打印日志的控制

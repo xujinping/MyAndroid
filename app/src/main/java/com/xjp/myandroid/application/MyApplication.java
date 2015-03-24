@@ -1,4 +1,4 @@
-package com.xjp.mymovieinfo.application;
+package com.xjp.myandroid.application;
 
 import android.app.Activity;
 import android.app.Application;

@@ -1,4 +1,4 @@
-package com.xjp.mymovieinfo.widget;
+package com.xjp.myandroid.widget;
 
 import android.util.SparseArray;
 import android.view.View;

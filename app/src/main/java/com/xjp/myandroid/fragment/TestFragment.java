@@ -1,4 +1,4 @@
-package com.xjp.mymovieinfo.fragment;
+package com.xjp.myandroid.fragment;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -6,10 +6,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.xjp.mymovieinfo.R;
-import com.xjp.mymovieinfo.base.BaseActivity;
-import com.xjp.mymovieinfo.base.BaseFragment;
-import com.xjp.mymovieinfo.widget.ViewInject;
+import com.xjp.myandroid.R;
+import com.xjp.myandroid.base.BaseActivity;
+import com.xjp.myandroid.base.BaseFragment;
+import com.xjp.myandroid.widget.ViewInject;
 
 /**
  * Description:
@@ -20,6 +20,7 @@ import com.xjp.mymovieinfo.widget.ViewInject;
 
 public class TestFragment extends BaseFragment {
 
+    //注解查找id
     @ViewInject(id = R.id.tv_title)
     TextView tv;
 

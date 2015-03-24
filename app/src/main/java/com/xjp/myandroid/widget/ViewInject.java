@@ -1,4 +1,4 @@
-package com.xjp.mymovieinfo.widget;
+package com.xjp.myandroid.widget;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

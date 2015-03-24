@@ -1,4 +1,4 @@
-package com.xjp.mymovieinfo.adapter;
+package com.xjp.myandroid.adapter;
 
 import android.view.View;
 import android.view.ViewGroup;

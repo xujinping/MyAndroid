@@ -1,4 +1,4 @@
-package com.xjp.mymovieinfo.base;
+package com.xjp.myandroid.base;
 
 
 import android.app.Activity;
@@ -9,7 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.xjp.mymovieinfo.utils.MyLog;
+import com.xjp.myandroid.utils.MyLog;
 
 /**
  * Description:Fragment 基础类，所有Fragment实现都继承此基础类，便于控制生命周期和代码复用

@@ -1,4 +1,4 @@
-package com.xjp.mymovieinfo.adapter;
+package com.xjp.myandroid.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -6,8 +6,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.xjp.mymovieinfo.R;
-import com.xjp.mymovieinfo.widget.ViewHolder;
+import com.xjp.myandroid.R;
+import com.xjp.myandroid.widget.ViewHolder;
 
 /**
  * Description: 适配器测试类
@@ -32,6 +32,7 @@ public class TestAdapter extends CustomAdapter<String> {
             convertView = LayoutInflater.from(context).inflate(R.layout.activity_main, null);
         }
 
+        //此处也无需在使用findViewById 繁琐查找，直接使用ViewHolder类即可。
         TextView tv = ViewHolder.get(convertView, R.id.tv_title);
 
         return convertView;
