@@ -2,6 +2,7 @@ package com.xjp.myandroid.network;
 
 
 import android.volley.mytools.ImageCache;
+import android.volley.toolbox.StringRequest;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -62,11 +63,66 @@ public class VolleyHttp {
      *
      * @param url
      * @param httpResult
+     * @param requestCode 请求码
+     */
+    public void get(String url, HttpResult httpResult, int requestCode) {
+        executeHttp(url, httpResult, null, null, requestCode);
+    }
+
+    /**
+     * 网络json数据请求和解析 post方法
+     *
+     * @param url
+     * @param httpResult
+     * @param params
+     * @param headers
+     * @param requestCode 请求码
+     */
+    public void post(String url, HttpResult httpResult, Map<String, String> params,
+                     Map<String, String> headers, int requestCode) {
+        executeHttp(url, httpResult, params, headers, requestCode);
+    }
+
+
+    /**
+     * Volley 网络框架请求，网络返回的值是字符串
+     *
+     * @param url
+     * @param httpResult
+     * @param params
+     * @param headers
+     * @param requestCode 请求码
+     */
+    private void executeHttp(String url, final HttpResult httpResult, Map<String, String> params,
+                             Map<String, String> headers, final int requestCode) {
+        MyLog.d(this.getClass().getCanonicalName(), url);
+        StringRequest stringRequest = new StringRequest(url, params, headers, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                httpResult.onSuccess(response, requestCode);
+            }
+        }, new ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                httpResult.onFailed(error);
+            }
+        });
+        stringRequest.setTag("tag");
+        mQueue.add(stringRequest);
+    }
+
+
+    /**
+     * 网络json数据请求和解析 get方法
+     *
+     * @param url
+     * @param httpResult
      * @param clazz
      * @param <T>
+     * @param requestCode 请求码
      */
-    public <T> void get(String url, final HttpResult httpResult, Class<T> clazz) {
-        executeHttp(url, httpResult, null, null, clazz);
+    public <T> void get(String url, HttpResult httpResult, Class<T> clazz, int requestCode) {
+        executeHttp(url, httpResult, null, null, clazz, requestCode);
     }
 
 
@@ -79,10 +135,11 @@ public class VolleyHttp {
      * @param headers
      * @param clazz
      * @param <T>
+     * @param requestCode 请求码
      */
-    public <T> void post(String url, final HttpResult httpResult, Map<String, String> params,
-                         Map<String, String> headers, Class<T> clazz) {
-        executeHttp(url, httpResult, params, headers, clazz);
+    public <T> void post(String url, HttpResult httpResult, Map<String, String> params,
+                         Map<String, String> headers, Class<T> clazz, int requestCode) {
+        executeHttp(url, httpResult, params, headers, clazz, requestCode);
     }
 
     /**
@@ -94,14 +151,15 @@ public class VolleyHttp {
      * @param headers
      * @param clazz
      * @param <T>
+     * @param requestCode 请求码
      */
     private <T> void executeHttp(String url, final HttpResult httpResult, Map<String, String> params,
-                                 Map<String, String> headers, Class<T> clazz) {
+                                 Map<String, String> headers, Class<T> clazz, final int requestCode) {
         MyLog.d(this.getClass().getCanonicalName(), url);
         FastJsonRequest<T> fastJsonRequest = new FastJsonRequest<T>(url, params, headers, clazz, new Response.Listener<T>() {
             @Override
             public void onResponse(T response) {
-                httpResult.onSuccess(response);
+                httpResult.onSuccess(response, requestCode);
             }
         }, new ErrorListener() {
             @Override

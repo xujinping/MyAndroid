@@ -61,4 +61,10 @@ public class MyApplication extends Application {
             }
         }
     }
+
+    @Override
+    public void onLowMemory() {
+        super.onLowMemory();
+        instance = this;
+    }
 }

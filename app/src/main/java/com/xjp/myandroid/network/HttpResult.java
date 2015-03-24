@@ -9,7 +9,7 @@ import com.android.volley.VolleyError;
  * Time: 12:55
  */
 public interface HttpResult<T> {
-    public void onSuccess(T response);
+    public void onSuccess(T response, int requestCode);
 
     public void onFailed(VolleyError error);
 }

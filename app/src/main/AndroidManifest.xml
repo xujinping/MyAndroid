@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.xjp.myandroid" >
+    package="com.xjp.myandroid">
 
+    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
     <application
+        android:name="com.xjp.myandroid.application.MyApplication"
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:name="com.xjp.myandroid.application.MyApplication"
-        android:theme="@style/CustomAppTheme" >
+        android:theme="@style/CustomAppTheme">
         <activity
-            android:name="com.xjp.myandroid.activity.MainActivity"
-            android:label="@string/app_name" >
+            android:name="com.xjp.myandroid.activity.TestHttpActivity"
+            android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

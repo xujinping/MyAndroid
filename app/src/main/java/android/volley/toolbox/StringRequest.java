@@ -1,4 +1,4 @@
-/*
+package android.volley.toolbox;/*
  * Copyright (C) 2011 The Android Open Source Project Licensed under the Apache
  * License, Version 2.0 (the "License"); you may not use this file except in
  * compliance with the License. You may obtain a copy of the License at
@@ -9,15 +9,15 @@
  * governing permissions and limitations under the License.
  */
 
-package com.android.volley.toolbox;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.NetworkResponse;
 import com.android.volley.Request;
 import com.android.volley.Response;
-import com.android.volley.Request.Method;
 import com.android.volley.Response.ErrorListener;
 import com.android.volley.Response.Listener;
+import com.android.volley.toolbox.HttpHeaderParser;
+
 import java.io.UnsupportedEncodingException;
 import java.util.Collections;
 import java.util.Map;
