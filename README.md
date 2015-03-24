@@ -6,7 +6,7 @@
 
 #使用
 ##1.BaseActivity：Activity基础类，所有Activity都继承此基础Activity类，且必须实现BaseActivity的抽象方法。此类中实现了注解方式
-查找UI,无需在使用繁琐的 findViewById 方式去查找控件。使用如下：
+查找UI,无需在使用繁琐的 findViewById 方式去查找控件。所有子类的activity都可以设置isHideActionBar的值是来控制是否显示ActionBar使用如下：
 public class MainActivity extends BaseActivity {
     //此处就是使用注解查找id。
     @ViewInject(id = R.id.tv_title)
