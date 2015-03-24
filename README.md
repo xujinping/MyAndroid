@@ -1,6 +1,6 @@
 # MyAndroid
 快速简单Android 开发框架
-此框架包含 BaseActivity，BaseFragment，MyApplication, CustomAdapter，MyLog，BaseHttpActivity, BaseHttpFragment,CustomViewPager等功能模块。此框架使用的网络请求是使用Google2013年I/O开发大会发布的Volley开源框架。
+此框架包含 BaseActivity，BaseFragment，MyApplication, CustomAdapter，MyLog，BaseHttpActivity, BaseHttpFragment,CustomViewPagerAdapter等功能模块。此框架使用的网络请求是使用Google2013年I/O开发大会发布的Volley开源框架。
 
 #使用
 ##1.BaseActivity：
