@@ -8,6 +8,7 @@ Activity基础类，所有Activity都继承此基础Activity类，且必须实�
 查找UI,无需在使用繁琐的 findViewById 方式去查找控件。所有子类的activity都可以设置isHideActionBar的值是来控制是否显示ActionBar使用如下：
 
 public class MainActivity extends BaseActivity {
+    
     //此处就是使用注解查找id。
     @ViewInject(id = R.id.tv_title)
     TextView tv;
@@ -88,6 +89,7 @@ public class TestFragment extends BaseFragment {
 和接口就可以拿到网络返回的数据了。支持多种结果的请求：
 
 1.请求结果直接为java bean对象，无需解析json数据，使用方法
+
 /**
      * get方式的网络请求 网络返回值为特定的类
      *
