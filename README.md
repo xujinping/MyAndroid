@@ -5,7 +5,8 @@
 此框架包含 BaseActivity，BaseFragment，MyApplication, CustomAdapter，MyLog等功能模块。
 
 #使用
-##1.BaseActivity：Activity基础类，所有Activity都继承此基础Activity类，且必须实现BaseActivity的抽象方法。此类中实现了注解方式
+##1.BaseActivity：
+Activity基础类，所有Activity都继承此基础Activity类，且必须实现BaseActivity的抽象方法。此类中实现了注解方式
 查找UI,无需在使用繁琐的 findViewById 方式去查找控件。所有子类的activity都可以设置isHideActionBar的值是来控制是否显示ActionBar使用如下：
 public class MainActivity extends BaseActivity {
     //此处就是使用注解查找id。
@@ -31,7 +32,8 @@ public class MainActivity extends BaseActivity {
 }
 
 
-##2.BaseFragment：所有的Fragment都继承BaseFragment，为了支持Fragment的注解查找Id，需要如下实现：
+##2.BaseFragment：
+所有的Fragment都继承BaseFragment，为了支持Fragment的注解查找Id，需要如下实现：
 public class TestFragment extends BaseFragment {
 
     //注解查找id
@@ -50,7 +52,8 @@ public class TestFragment extends BaseFragment {
 
     }
     
-    ##3.CustomAdapter：所有的数据适配器都继承此类，子类只需要实现父类CustomAdapter的抽象方法setHolderView（）即可。
+    ##3.CustomAdapter：
+    所有的数据适配器都继承此类，子类只需要实现父类CustomAdapter的抽象方法setHolderView（）即可。
     使用如下：
     public class TestAdapter extends CustomAdapter<String> {
 
@@ -74,7 +77,9 @@ public class TestFragment extends BaseFragment {
         return convertView;
     }
 }
-##4.MyLog： 日志打印控制类，便于整体控制release 和debug 模式下的调试。无需自己在release 时修改全局变量控制日志打印，代码
+##4.MyLog：
+日志打印控制类，便于整体控制release 和debug 模式下的调试。无需自己在release 时修改全局变量控制日志打印，代码
 自动控制。
 
-##5.MyApplication：控制整个程序中的所有activity生命周期和activity退出的问题。具体看代码实现。
+##5.MyApplication：
+控制整个程序中的所有activity生命周期和activity退出的问题。具体看代码实现。
