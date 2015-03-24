@@ -1,6 +1,6 @@
 # MyAndroid
 快速简单Android 开发框架
-此框架包含 BaseActivity，BaseFragment，MyApplication, CustomAdapter，MyLog，BaseHttpActivity, BaseHttpFragment,CustomViewPager等功能模块。
+此框架包含 BaseActivity，BaseFragment，MyApplication, CustomAdapter，MyLog，BaseHttpActivity, BaseHttpFragment,CustomViewPager等功能模块。此框架使用的网络请求是使用Google2013年I/O开发大会发布的Volley开源框架。
 
 #使用
 ##1.BaseActivity：
@@ -91,7 +91,7 @@ public class TestFragment extends BaseFragment {
 所有有关网络请求的Fragment都继承此类，子类Fragment可以很方便的调用父类中的get和post网络请求方法。然后子类实现父类的抽象方法
 和接口就可以拿到网络返回的数据了。
 
-##CustomViewPagerAdapter 
+##8.CustomViewPagerAdapter 
 所有的关于ViewPager使用的适配器都可以使用这个类，不需要重复写多个ViewPagerAdapter。
 
 
