@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Description: 客户化基础类适配器
+ * Description: 客户化基础类通用适配器
  * User: xjp
  * Date: 2015/3/23
  * Time: 17:29
