@@ -36,7 +36,7 @@ public abstract class CustomAdapter<T> extends BaseAdapter {
 
     @Override
     public Object getItem(int position) {
-        return mList.get(position);
+        return mList == null ? 0 : mList.get(position);
     }
 
     @Override
