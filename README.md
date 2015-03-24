@@ -90,7 +90,8 @@ public class TestFragment extends BaseFragment {
 
 1.请求结果直接为java bean对象，无需解析json数据，使用方法
 
-/**
+
+    /**
      * get方式的网络请求 网络返回值为特定的类
      *
      * @param url         请求的地址
