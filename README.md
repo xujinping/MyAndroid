@@ -86,6 +86,7 @@ public class TestFragment extends BaseFragment {
 ##6.BaseHttpActivity
 所有有关网络请求的Activity都继承此类，子类Activity可以很方便的调用父类中的get和post网络请求方法，然后子类实现父类的抽象方法
 和接口就可以拿到网络返回的数据了。支持多种结果的请求：
+
 1.请求结果直接为java bean对象，无需解析json数据，使用方法
 /**
      * get方式的网络请求 网络返回值为特定的类
