@@ -85,7 +85,32 @@ public class TestFragment extends BaseFragment {
 
 ##6.BaseHttpActivity
 所有有关网络请求的Activity都继承此类，子类Activity可以很方便的调用父类中的get和post网络请求方法，然后子类实现父类的抽象方法
-和接口就可以拿到网络返回的数据了。
+和接口就可以拿到网络返回的数据了。支持多种结果的请求：
+1.请求结果直接为java bean对象，无需解析json数据，使用方法
+/**
+     * get方式的网络请求 网络返回值为特定的类
+     *
+     * @param url         请求的地址
+     * @param clazz       解析json需要生成的类对象
+     * @param <T>         需要生成的泛型类
+     * @param requestCode 请求码
+     */
+    protected <T> void get(String url, Class<T> clazz, int requestCode) {
+        VolleyHttp.getInstance().get(url, this, clazz, requestCode);
+    }
+    
+    2.请求结果直接为String类型，需要自己进一步解析json数据，使用方法
+     /**
+     * get 方式请求网络，网络返回值为字符串
+     *
+     * @param url         请求的地址
+     * @param requestCode 请求码
+     */
+    protected void get(String url, int requestCode) {
+        VolleyHttp.getInstance().get(url, this, requestCode);
+    }
+    
+    3.支持请求码来区分请求结果，通过方法中的requestCode来控制了，具体请参考TestHttpActivity类怎么使用。
 
 ##7.BaseHttpFragment
 所有有关网络请求的Fragment都继承此类，子类Fragment可以很方便的调用父类中的get和post网络请求方法。然后子类实现父类的抽象方法
