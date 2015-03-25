@@ -1,5 +1,7 @@
 package com.xjp.myandroid.base;
 
+import android.text.TextUtils;
+
 import com.xjp.myandroid.network.HttpResult;
 import com.xjp.myandroid.network.VolleyHttp;
 
@@ -23,6 +25,7 @@ public abstract class BaseHttpActivity extends BaseActivity implements HttpResul
      * @param requestCode 请求码
      */
     protected <T> void get(String url, Class<T> clazz, int requestCode) {
+        checkUrl(url);
         VolleyHttp.getInstance().get(url, this, clazz, requestCode);
     }
 
@@ -38,6 +41,7 @@ public abstract class BaseHttpActivity extends BaseActivity implements HttpResul
      */
     protected <T> void post(String url, Map<String, String> params, Map<String, String> headers,
                             Class<T> clazz, int requestCode) {
+        checkUrl(url);
         VolleyHttp.getInstance().post(url, this, params, headers, clazz, requestCode);
     }
 
@@ -48,6 +52,7 @@ public abstract class BaseHttpActivity extends BaseActivity implements HttpResul
      * @param requestCode 请求码
      */
     protected void get(String url, int requestCode) {
+        checkUrl(url);
         VolleyHttp.getInstance().get(url, this, requestCode);
     }
 
@@ -60,7 +65,19 @@ public abstract class BaseHttpActivity extends BaseActivity implements HttpResul
      * @param requestCode 请求码
      */
     protected void post(String url, Map<String, String> params, Map<String, String> headers, int requestCode) {
+        checkUrl(url);
         VolleyHttp.getInstance().post(url, this, params, headers, requestCode);
+    }
+
+    /**
+     * 检查url是否有效
+     *
+     * @param url
+     */
+    private void checkUrl(String url) {
+        if (!TextUtils.isEmpty(url) || (url != null && !url.contains("http://"))) {
+            showTost("无效的网络请求地址");
+        }
     }
 
 
