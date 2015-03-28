@@ -4,13 +4,13 @@
 
     <uses-permission android:name="android.permission.INTERNET"></uses-permission>
     <application
-        android:name="com.xjp.myandroid.application.MyApplication"
+        android:name="com.xjp.movieinfo.application.MyApplication"
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/CustomAppTheme">
         <activity
-            android:name="com.xjp.myandroid.activity.TestHttpActivity"
+            android:name="com.xjp.movieinfo.activity.TestHttpActivity"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
